@@ -6,30 +6,95 @@
   <title>4HEDS</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Reset default browser spacing */
+    body {
+      margin: 0;
+      padding: 0;
+    }
+
+    .hero-container {
+      margin: 0 auto;
+      margin-top: 0px;
+      width: 70%;
+      height: 450px;
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .hero-container img { 
+      width: 10%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid rgba(0, 0, 0, 0.2);
+      transition: all ease-in-out 0.5s;
+    }
+
+    .hero-container img:hover {
+      width: 25%;
+    }
+
+    .user-info {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.user-info img {
+  width: 100px;
+  height: 100px;
+  object-fit: cover;
+  aspect-ratio: 10 / 10;
+  border: 3px solid #f7c948;
+  border-radius: 50%;
+  background: #eee;
+  padding: 5px;
+  margin-right: 15px;
+}
+
+.user-info .title {
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 2px;
+}
+.user-info .description {
+  font-size: 14px;
+  color: #888;
+}
+  </style>
 </head>
 <body>
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light bg-light border-bottom">
-    <div class="container">
-        <a class="navbar-brand" href="#">4HEDS</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item me-1"><a class="nav-link" href="index.html">About Us</a></li>
-                <li class="nav-item me-1"><a class="nav-link" href="#">Camille</a></li>
-                <li class="nav-item me-1"><a class="nav-link" href="iris.html">Iris Lewy</a></li>
-                <li class="nav-item me-1"><a class="nav-link" href="#">Andrey Maben</a></li>
-                <li class="nav-item me-1"><a class="nav-link" href="#">Zane Ivan</a></li>
-            </ul>
-        </div>
+  <div class="container-fluid px-4">
+    <a class="navbar-brand" href="#">4HEDS</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item me-1"><a class="nav-link" href="index.html">About Us</a></li>
+        <li class="nav-item me-1"><a class="nav-link" href="camille.html">Camille</a></li>
+        <li class="nav-item me-1"><a class="nav-link" href="iris.html">Iris Lewy</a></li>
+        <li class="nav-item me-1"><a class="nav-link" href="andrey.html">Andrey Maben</a></li>
+        <li class="nav-item me-1"><a class="nav-link" href="zane.html">Zane Ivan</a></li>
+      </ul>
     </div>
+  </div>
 </nav>
 
 <!-- Main Heading -->
 <section class="hero">
-  <div class="container">
+  <div class="hero-container">
+    <img src="Pictures/Maben.jpg" alt="Maben">
+    <img src="Pictures/Ellie.jpg" alt="Camille">
+    <img src="Pictures/Iris.jpg" alt="Iris">
+    <img src="Pictures/Zane.jpg" alt="Zane">
+  </div>
+  <div class="text-center mt-4">
     <h1 class="display-4 fw-bold">4HEDS</h1>
     <p class="lead">About Us</p>
   </div>
@@ -53,7 +118,7 @@
 
 <!-- Heading and Subheading -->
 <section class="text-center my-5">
-  <h2 class="h2 fw-bold">Heading</h2>
+  <h2 class="h2 fw-bold">Meet the 4HEDS</h2>
   <p class="text-muted">Subheading</p>
 </section>
 
@@ -65,13 +130,15 @@
     <div class="col-12 col-md-6">
       <div class="card-quote text-center">
         <blockquote class="blockquote mb-0">
-          “Quote 1”
+          “Believe in the you who believes in yourself”
+          <br> - Kamina
+          <br><br>
         </blockquote>
         <div class="user-info justify-content-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="User">
+          <img src="Pictures\babyiris.jpg" alt="User">
           <div class="text-start">
-            <div class="title">Title 1</div>
-            <div class="description">Description 1</div>
+            <div class="title">Iris Lewy D. Arce</div>
+            <div class="description">Hello, I am Iris Arce but you may just refer to me as 'Iris'. I am very timid, but I like drawing and gaming during my free time.</div>
           </div>
         </div>
       </div>
@@ -81,13 +148,14 @@
     <div class="col-12 col-md-6">
       <div class="card-quote text-center">
         <blockquote class="blockquote mb-0">
-          “Quote 2”
+          “Yeah, I know that you're low. Once you hit the bottom, at least there's nowhere to go but up"
+          <br> - Bring Me The Horizon
         </blockquote>
         <div class="user-info justify-content-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="User">
+          <img src="Pictures\babyzane.jpg" alt="User">
           <div class="text-start">
-            <div class="title">Title 2</div>
-            <div class="description">Description 2</div>
+            <div class="title">Zane Ivan R. Bagunas</div>
+            <div class="description">Hello! The name's Zane Ivan, can be Zane, can be Ivan, its up to you! I may be a bit quiet if you don't know me but I'll be the noisiest one once we do get close. Catch ya sometime!</div>
           </div>
         </div>
       </div>
@@ -97,13 +165,14 @@
     <div class="col-12 col-md-6">
       <div class="card-quote text-center">
         <blockquote class="blockquote mb-0">
-          “Quote 3”
+          “Whatever happens, happens”
+          <br>- enternalnight4
         </blockquote>
         <div class="user-info justify-content-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="User">
+          <img src="Pictures\babymaben.jpg" alt="User">
           <div class="text-start">
-            <div class="title">Title 3</div>
-            <div class="description">Description 3</div>
+            <div class="title">Andrey Maben B. Palarca</div>
+            <div class="description">Hi I am Andrey Maben B. Palarca but you can call me Andrey or Mabs. I like  to eat sleep and play online games and lastly i love spending time with my friends.</div>
           </div>
         </div>
       </div>
@@ -113,25 +182,25 @@
     <div class="col-12 col-md-6">
       <div class="card-quote text-center">
         <blockquote class="blockquote mb-0">
-          “Quote 4”
+          “I'm a man of fortune, and I must seek my fortune”
+          <br> -Avery Henry
         </blockquote>
         <div class="user-info justify-content-center">
-          <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="User">
+          <img src="Pictures/babyellie.jpg" alt="User">
           <div class="text-start">
-            <div class="title">Title 4</div>
-            <div class="description">Description 4</div>
+            <div class="title">Camille C. Valladarez</div>
+            <div class="description">Howdy! I am Camille C. Valladarez, but my friends call me Cams/Ellie; anything will do. I usually play games or either stream during my free time so stay tune!</div>
           </div>
         </div>
       </div>
     </div>
-
   </div>
 </section>
 
 <!-- Footer -->
-<footer>
-  <div class="container">
-    <p class="text-center mb-0">&copy; 2025 4HEDS. All Rights Reserved</p>
+<footer class="bg-light border-top mt-5 py-3">
+  <div class="container text-center">
+    <p class="mb-0">&copy; 2025 4HEDS. All Rights Reserved</p>
   </div>
 </footer>
 
