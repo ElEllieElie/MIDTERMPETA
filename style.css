@@ -2,7 +2,7 @@ body {
   color: #333;
 }
 .hero {
-  background: linear-gradient(to right, #dddddd, #cccccc);
+  background: linear-gradient(black, grey);
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -16,9 +16,10 @@ body {
 }
 .card-custom:hover {
   transform: translateY(-5px);
+
 }
 footer {
-  background: linear-gradient(to right, #dddddd, #cccccc);
+  background: linear-gradient( black, grey);
   color: white;
   padding: 40px 0;
   text-align: center;
@@ -27,6 +28,7 @@ footer a {
   color: white;
   text-decoration: underline;
 }
+
 .card-quote {
   border: 1px solid #eee;
   border-radius: 8px;
