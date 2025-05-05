@@ -7,6 +7,7 @@ body {
   padding: 80px 20px;
   text-align: center;
 }
+
 .card-custom {
   border: 1px solid #ddd;
   border-radius: 8px;
@@ -35,4 +36,28 @@ footer a {
   padding: 20px;
   background-color: #fff;
   height: 100%;
+}
+nav {
+  position: relative;
+}
+nav a {
+  display: inline-block;
+  position: relative;
+  transition: all 0.4s ease-in-out;
+}
+nav a:hover {
+  color: grey;
+  background-color: lightgrey;
+  padding: 5px;
+  border-radius: 4px;
+  transition: all 0.4s ease-in-out;
+  z-index: 1;
+}
+nav a.active {
+  color: white;
+  background-color: grey;
+  padding: 5px;
+  border-radius: 4px;
+  font-weight: bold;
+  transition: all 0.4s ease-in-out;
 }
