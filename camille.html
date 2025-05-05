@@ -18,12 +18,12 @@
   text-align: center;
 }
 body {
-  background: linear-gradient(black , grey);
+  background: linear-gradient(black , darkred);
   color: white;
   text-align: center;
 }
 footer {
-  background: linear-gradient( red, black);
+  background: linear-gradient( black, red);
   color: white;
   padding: 40px 0;
   text-align: center;
@@ -38,6 +38,12 @@ footer a {
   object-fit: contain;
   margin-bottom: 500px;
   transform: translateY(-200px); /* Moves the image up by 50px */
+}
+/* Hover effect for icons */
+.fa-brands:hover {
+  transform: scale(1.2);
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: #ffcc00; /* Change to a highlight color on hover */
 }
 </style>
 <!-- Navbar -->
@@ -124,14 +130,14 @@ footer a {
 </section>
 
 <!-- Heading and Subheading -->
-<section class="text-center my-5">
-  <h2 class="h2 fw-bold">About Camille</h2>
-  <p class="text-muted fs-5 px-4">
-    <span style="font-size: 1.2rem; font-weight: bold;">Howdy!</span> I am <span style="color: #E34F26; font-weight: bold;">Camille C. Valladarez</span>, but my friends call me <span style="color: #3776AB; font-style: italic;">Cams</span>/<span style="color: #7952B3; font-style: italic;">Ellie</span>; anything will do. 
-    I usually <span style="color: #1DB954; font-weight: bold;">play games</span> or <span style="color: #5865F2; font-weight: bold;">stream</span> during my free time, so stay tuned! 
-    My plan is to take a course in <span style="color: #0A66C2; font-weight: bold;">BSIT</span> and make it abroad. 
+<section class="text-center my-2">
+  <h2 class="h2 fw-bold" style="font-size: 2.5rem;">About Camille</h2>
+  <p class="text-muted fs-5 px-4" style="color: #FFD700; font-size: 1.5rem;">
+    <span style="font-size: 1.8rem; font-weight: bold;">Howdy!</span> I am <span style="color: #FFA07A; font-weight: bold;">Camille C. Valladarez</span>, but my friends call me <span style="color: #87CEFA; font-style: italic;">Cams</span>/<span style="color: #DA70D6; font-style: italic;">Ellie</span>; anything will do. 
+    I usually <span style="color: #98FB98; font-weight: bold;">play games</span> or <span style="color: #ADD8E6; font-weight: bold;">stream</span> during my free time, so stay tuned! 
+    My plan is to take a course in <span style="color: #AFEEEE; font-weight: bold;">BSIT</span> and make it abroad. 
     In my early years, I was exposed to advanced technology, which made me fond of it and inspired my passion for innovation.
-  </p></p>
+  </p>
 </section>
 
 <!-- Cards Section -->
@@ -257,40 +263,40 @@ footer a {
 <!-- Socials -->
 <div class="container my-2">
   <div class="card-custom text-center p-4">
-    <h5 class="fw-bold">Socials</h5>
+    <h5 class="fw-bold text-white">Socials</h5>
     <div class="row row-cols-1 row-cols-md-3 g-4 mt-3">
       <div class="col text-center">
-        <a href="https://www.facebook.com/camille.c.valladarez" target="_blank" class="text-decoration-none text-dark">
+        <a href="https://www.facebook.com/camille.c.valladarez" target="_blank" class="text-decoration-none text-white">
           <i class="fa-brands fa-facebook" style="font-size: 48px; color: #1877F2;"></i>
-          <p>Camille C. Valladarez</p>
+          <p style="color: white;">Camille C. Valladarez</p>
         </a>
       </div>
       <div class="col text-center">
-        <a href="https://www.instagram.com/camel.the.kamel/" target="_blank" class="text-decoration-none text-dark">
+        <a href="https://www.instagram.com/camel.the.kamel/" target="_blank" class="text-decoration-none text-white">
           <i class="fa-brands fa-instagram" style="font-size: 48px; color: #E1306C;"></i>
-          <p>@camel.the.kamel</p>
+          <p style="color: white;">@camel.the.kamel</p>
         </a>
       </div>
       <div class="col text-center">
-        <a href="https://x.com/NotCasualEllie" target="_blank" class="text-decoration-none text-dark">
+        <a href="https://x.com/NotCasualEllie" target="_blank" class="text-decoration-none text-white"></a>
           <i class="fa-brands fa-x-twitter" style="font-size: 48px; color: #000000;"></i>
           <p>@NotCasualEllie</p>
         </a>
       </div>
       <div class="col text-center">
-        <a href="http://discordapp.com/users/507489279229034497" target="_blank" class="text-decoration-none text-dark">
+        <a href="http://discordapp.com/users/507489279229034497" target="_blank" class="text-decoration-none text-white"></a>
           <i class="fa-brands fa-discord" style="font-size: 48px; color: #5865F2;"></i>
           <p>@elellie</p>
         </a>
       </div>
       <div class="col text-center">
-        <a href="https://www.linkedin.com/in/camille-valladarez-3a512932b/" target="_blank" class="text-decoration-none text-dark">
+        <a href="https://www.linkedin.com/in/camille-valladarez-3a512932b/" target="_blank" class="text-decoration-none text-white"></a>
           <i class="fa-brands fa-linkedin" style="font-size: 48px; color: #0A66C2;"></i>
           <p>Camille Valladarez</p>
         </a>
       </div>
       <div class="col text-center">
-        <a href="https://open.spotify.com/user/31fkebofhmiks5qkdohpfki3xf6i" target="_blank" class="text-decoration-none text-dark">
+        <a href="https://open.spotify.com/user/31fkebofhmiks5qkdohpfki3xf6i" target="_blank" class="text-decoration-none text-white"></a>
           <i class="fa-brands fa-spotify" style="font-size: 48px; color: #1DB954;"></i>
           <p>Ellie</p>
         </a>
@@ -302,34 +308,32 @@ footer a {
 <!-- Streaming Platforms -->
 <div class="container my-2">
   <div class="card-custom text-center p-4">
-    <h5 class="fw-bold">Streaming Platforms</h5>
+    <h5 class="fw-bold text-white">Streaming Platforms</h5>
     <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4 justify-content-center mt-3">
       <div class="col text-center">
-        <a href="https://www.tiktok.com/@caspianelliot?is_from_webapp=1&sender_device=pc" target="_blank" class="d-flex flex-column align-items-center text-decoration-none text-dark">
+        <a href="https://www.tiktok.com/@caspianelliot?is_from_webapp=1&sender_device=pc" target="_blank" class="d-flex flex-column align-items-center text-decoration-none text-white">
           <i class="fa-brands fa-tiktok" style="font-size: 48px; color:#010101;"></i>
           <span>@caspianelliot</span>
         </a>
       </div>
       <div class="col text-center">
-        <a href="https://www.tiktok.com/@rizirizzler?is_from_webapp=1&sender_device=pc" target="_blank" class="d-flex flex-column align-items-center text-decoration-none text-dark">
+        <a href="https://www.tiktok.com/@rizirizzler?is_from_webapp=1&sender_device=pc" target="_blank" class="d-flex flex-column align-items-center text-decoration-none text-white">
           <i class="fa-brands fa-tiktok" style="font-size: 48px; color:#010101;"></i>
           <span>@rizirizzler</span>
         </a>
       </div>
       <div class="col text-center">
-        <a href="https://www.twitch.tv/elellieelie" target="_blank" class="d-flex flex-column align-items-center text-decoration-none text-dark">
+        <a href="https://www.twitch.tv/elellieelie" target="_blank" class="d-flex flex-column align-items-center text-decoration-none text-white">
           <i class="fa-brands fa-twitch" style="font-size: 48px; color:#9146FF;"></i>
           <span>@elellieelie</span>
         </a>
       </div>
       <div class="col text-center">
-        <a href="https://www.youtube.com/@elellieplayz" target="_blank" class="d-flex flex-column align-items-center text-decoration-none text-dark">
+        <a href="https://www.youtube.com/@elellieplayz" target="_blank" class="d-flex flex-column align-items-center text-decoration-none text-white">
           <i class="fa-brands fa-youtube" style="font-size: 48px; color:#FF0000;"></i>
           <span>@elellieplayz</span>
         </a>
       </div>
-    </div>
-    </div>
     </div>
   </div>
 </div>
