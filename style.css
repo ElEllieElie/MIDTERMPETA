@@ -1,8 +1,8 @@
 body {
-  color: #333;
+  background: linear-gradient(grey, white);
 }
 .hero {
-  background: linear-gradient(black, grey);
+  background: linear-gradient(black, whitesmoke);
   color: white;
   padding: 80px 20px;
   text-align: center;
@@ -20,7 +20,7 @@ body {
 
 }
 footer {
-  background: linear-gradient( black, grey);
+  background: linear-gradient( grey, black);
   color: white;
   padding: 40px 0;
   text-align: center;
