@@ -11,11 +11,14 @@
       align-items: center;
       height: 100vh;
       margin: 0;
-      background-color: #f8f9fa;
+      background-color: #182430;
       font-family: Arial, sans-serif;
     }
     .entry-container {
       text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
     .entry-link {
       display: inline-block;
@@ -25,17 +28,170 @@
       background-color: #007bff;
       border-radius: 5px;
       text-decoration: none;
-      transition: background-color 0.3s ease;
+      font-weight: bold;
+      box-shadow: 0 4px 6px whitesmoke;
+      transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.2s ease;
     }
     .entry-link:hover {
       background-color: #0056b3;
+      transform: scale(1.05);
+      box-shadow: 0 6px 8px whitesmoke;
+    }
+    h1 {
+      font-size: 36px;
+      color: white;
+      margin-bottom: 20px;
+    }
+    .custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 10px;
+      height: 10px;
+      background-color: rgba(0, 123, 255, 0.8);
+      border-radius: 50%;
+      pointer-events: none;
+      transform: translate(-50%, -50%) scale(1);
+      transition: transform 0.1s ease-out, background-color 0.3s ease;
+    }
+    .custom-cursor.hover {
+      transform: translate(-50%, -50%) scale(1.5);
+      background-color: rgba(0, 86, 179, 0.8);
+    }
+    .bouncing-text {
+      display: inline-block;
+      color: white;
+      font-size: 36px;
+      letter-spacing: 5px;
+    }
+    .bouncing-text span {
+      display: inline-block;
+      animation: bounce 2s infinite ease-in-out;
+    }
+    .bouncing-text span:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+    .bouncing-text span:nth-child(even) {
+      animation-delay: 0.4s;
+    }
+    @keyframes bounce {
+      0%, 100% {
+        transform: translateY(0);
+      }
+      50% {
+        transform: translateY(-10px);
+      }
     }
   </style>
 </head>
 <body>
   <div class="entry-container">
-    <h1>Welcome to 4HEDS</h1>
-    <a class="entry-link" href="FLOWERS\flower1.html">Enter</a>
+    <h1 class="bouncing-text">Welcome to 4HEDS</h1>
+    <a class="entry-link" href="FLOWERS/flower1.html">Enter</a>
   </div>
+
+  <!-- Audio element -->
+<audio id="whoosh-sound" preload="auto" src="sound/whoosh1.mp3"></audio>
+
+<script>
+  class LoudAudio {
+    constructor(audioElement, gainValue = 2.0) {
+      this.audioElement = audioElement;
+      this.audioContext = new (window.AudioContext || window.webkitAudioContext)();
+      this.source = this.audioContext.createMediaElementSource(this.audioElement);
+      this.gainNode = this.audioContext.createGain();
+      this.gainNode.gain.value = gainValue;
+
+      // Connect audio nodes
+      this.source.connect(this.gainNode).connect(this.audioContext.destination);
+
+      // Unlock audio context
+      this._unlockAudioContext();
+    }
+
+    play() {
+      this.audioElement.currentTime = 0; // Optional: restart from beginning
+      this.audioElement.play().catch(err => {
+        console.warn("Playback blocked. Awaiting user interaction.");
+      });
+    }
+
+    _unlockAudioContext() {
+      const unlock = () => {
+        if (this.audioContext.state === "suspended") {
+          this.audioContext.resume();
+        }
+      };
+      document.addEventListener("click", unlock);
+      document.addEventListener("keydown", unlock);
+    }
+  }
+
+  // Initialize after DOM is loaded
+  document.addEventListener("DOMContentLoaded", () => {
+    const audio = document.getElementById("whoosh-sound");
+    let loudAudio = null;
+
+    if (audio) {
+      loudAudio = new LoudAudio(audio, 3.0); // Boost volume 3x
+
+      const playButton = document.getElementById("play-whoosh");
+      playButton.addEventListener("click", () => {
+        loudAudio.play();
+      });
+    }
+  });
+</script>
+
+  <script>
+    // Bouncing Text Setup
+    document.addEventListener("DOMContentLoaded", () => {
+      const text = document.querySelector(".bouncing-text");
+      const letters = text.textContent.split("");
+      text.innerHTML = "";
+      letters.forEach((letter) => {
+        const span = document.createElement("span");
+        span.textContent = letter;
+        text.appendChild(span);
+      });
+
+      // Custom Cursor
+      const cursor = document.createElement("div");
+      cursor.classList.add("custom-cursor");
+      document.body.appendChild(cursor);
+
+      document.addEventListener("mousemove", (e) => {
+        cursor.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+      });
+
+      document.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("mouseenter", () => cursor.classList.add("hover"));
+        link.addEventListener("mouseleave", () => cursor.classList.remove("hover"));
+      });
+
+      // Sound on Click
+      const button = document.querySelector(".entry-link");
+      const whooshSound = document.getElementById("whoosh-sound");
+
+      if (whooshSound) {
+        button.addEventListener("click", (e) => {
+          e.preventDefault(); // Prevent navigation
+          whooshSound.play().then(() => {
+            setTimeout(() => {
+              window.location.href = button.href;
+            }, 500); // delay to let sound finish
+          }).catch((error) => {
+            console.error("Audio playback failed:", error);
+            window.location.href = button.href; // fallback
+          });
+        });
+      } else {
+        console.warn("Audio file not found. Proceeding without sound.");
+        button.addEventListener("click", () => {
+          window.location.href = button.href;
+        });
+      }
+    });
+  </script>
 </body>
 </html>
