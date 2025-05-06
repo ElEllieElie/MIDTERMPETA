@@ -3,7 +3,7 @@ body {
 }
 .hero {
   background: linear-gradient(black, whitesmoke);
-  color: white;
+  color: black;
   padding: 80px 20px;
   text-align: center;
 }
