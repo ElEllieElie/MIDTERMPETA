@@ -237,3 +237,25 @@
   </script>
 </body>
 </html>
+<!-- Mute/Unmute Button -->
+<button id="mute-unmute-btn" style="position: fixed; top: 20px; right: 20px; padding: 10px 20px; font-size: 16px; background-color: #007bff; color: white; border: none; border-radius: 5px; cursor: pointer;">Mute</button>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+    const video = document.getElementById("background-video");
+    const muteUnmuteBtn = document.getElementById("mute-unmute-btn");
+
+    // Set initial icon
+    muteUnmuteBtn.innerHTML = video.muted ? "🔇" : "🔊";
+
+    muteUnmuteBtn.addEventListener("click", () => {
+      if (video.muted) {
+        video.muted = false;
+        muteUnmuteBtn.innerHTML = "🔊"; // Unmute icon
+      } else {
+        video.muted = true;
+        muteUnmuteBtn.innerHTML = "🔇"; // Mute icon
+      }
+    });
+  });
+</script>
