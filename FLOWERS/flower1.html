@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="flower.css">
     <link rel="icon" href="flowers.png" type="image/x-icon">
-    <title>flowers</title>
+    <title>Please wait...</title>
 </head>
 <body class="container">
     <div class="night"></div>
@@ -306,20 +306,20 @@
         </div>
       </div>
     </div>
-    <div id="alertBox" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 10px; font-size: 18px; z-index: 10000; display: none;">
-      Please wait, while we clean up the 4heds...
-    </div>
 
+    <!-- Alert-->
+    <div id="alertBox" style="position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%); background: rgba(0, 0, 0, 0.8); color: white; padding: 20px; border-radius: 10px; font-size: 18px; z-index: 10000; display: none;">
+      Please wait, while we clean up the 4HEDS...</div>
     <script>
       document.addEventListener("DOMContentLoaded", () => {
-        const alertBox = document.getElementById("alertBox");
-        alertBox.style.display = "block";
+      const alertBox = document.getElementById("alertBox");
+      alertBox.style.display = "block";
 
-        const animationDuration = 10000; // Adjust this to match the total animation duration in milliseconds
-        setTimeout(() => {
-          alertBox.style.display = "none";
-          window.location.href = "../newindex.html"; // Adjusted to a relative path assuming 'newindex.html' is in the parent directory
-        }, animationDuration);
+      const animationDuration = 10000; // Adjust this to match the total animation duration in milliseconds
+      setTimeout(() => {
+        alertBox.style.display = "none";
+        window.location.href = "../newindex.html"; // Adjusted to a relative path assuming 'newindex.html' is in the parent directory
+      }, animationDuration);
       });
     </script>
       <script src="main.js"></script>
